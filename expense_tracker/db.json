@@ -1,0 +1,22 @@
+{
+  "expenses": [
+    {
+      "id": "e1",
+      "title": "car Insurance",
+      "date": "2025-4-11",
+      "amount": 300
+    },
+    {
+      "id": "e2",
+      "title": "House rent",
+      "date": "2025-5-12",
+      "amount": 500
+    },
+    {
+      "id": "e3",
+      "title": "Tution fees",
+      "date": "2025-6-15",
+      "amount": 400
+    }
+  ]
+}
