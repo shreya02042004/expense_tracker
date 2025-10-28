@@ -1,0 +1,32 @@
+version: "3.8" # Using 3.8 as 3.9 is obsolete and can cause warnings
+
+services:
+  backend:
+    build: ./backend
+    container_name: expense_backend
+    ports:
+      - "5000:5000"
+    # Note: Using absolute path for env_file is fragile, but kept for compatibility.
+    # A better path would be: ./backend/.env
+    env_file:
+      - "C:/Users/shreya naik/Desktop/react_pro/expense_tracker/backend/.env"
+    depends_on:
+      - mongo
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    
+  mongo: # <-- CORRECTLY INDENTED under 'services'
+    image: mongo
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    environment:
+      # These credentials MUST match the MONGO_URI in your backend/.env file
+      - MONGO_INITDB_ROOT_USERNAME=Shreya_Naik
+      - MONGO_INITDB_ROOT_PASSWORD=shreya_db_0204
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
